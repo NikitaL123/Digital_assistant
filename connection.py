@@ -13,6 +13,6 @@ def poluchit_otvet_ot_llm(prompt: str) -> str:
             {"role": "user", "content": prompt}
         ],
         temperature=0.5,      # чтобы было точнее ( но работает это как-то 50/50)
-        max_tokens=2000
+        max_tokens=20000
     )
     return response.choices[0].message.content.strip()
