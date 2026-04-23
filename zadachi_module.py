@@ -40,6 +40,7 @@ def vydelit_zadachi(analizirovannyi_transkript: str) -> str:
     - Не интерпретируй разговор вне явного поручения
     - Если задача неясна — всё равно включи, но пометь исполнителя как "Неизвестно"
 
+
     Транскрипт:
     {analizirovannyi_transkript}
     """
