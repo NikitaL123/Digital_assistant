@@ -2,7 +2,7 @@ from imports import *
 from connection import poluchit_otvet_ot_llm
 
 def vydelit_zadachi(analizirovannyi_transkript: str) -> str:
-    prompt = f"""
+    instruction = """
     Твоя задача: проанализировать разговор и выделить все задачи, поручения и обязательства.
     1. Определение задач
     - Найди все формулировки, где:
@@ -39,9 +39,5 @@ def vydelit_zadachi(analizirovannyi_transkript: str) -> str:
     - Не додумывай смысл
     - Не интерпретируй разговор вне явного поручения
     - Если задача неясна — всё равно включи, но пометь исполнителя как "Неизвестно"
-
-
-    Транскрипт:
-    {analizirovannyi_transkript}
     """
-    return poluchit_otvet_ot_llm(prompt)
+    return poluchit_otvet_ot_llm(instruction, analizirovannyi_transkript)
